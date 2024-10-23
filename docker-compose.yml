@@ -3,7 +3,7 @@ services:
     build: .
     image: neymar
     ports:
-      - "6969:6969"
+      - "6942:6942"
     volumes:
       - .:/app
     environment:
