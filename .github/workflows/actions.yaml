@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker compose build api
+      - run: docker compose -p neymar build
       - run: echo "${{ secrets.LOGIN_SECRET }}" | docker login -u "${{ secrets.LOGIN_USERNAME }}" --password-stdin
-      - run: docker tag neymarmodel djdonpablo/neymarmodel
-      - run: docker push djdonpablo/neymarmodel
+      - run: docker tag neymar-api djdonpablo/neymar-api
+      - run: docker push djdonpablo/neymar-api
