@@ -1,0 +1,11 @@
+name: neymar left side dribble 4 players
+on: [push]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose build api
+      - run: echo "${{LOGIN_SECRET}}" | docker login -u "${{LOGIN_USERNAME}}" --password-stdin
+      - run: docker tag neymarmodel djdonpablo/neymarmodel
+      - run: docker push djdonpablo/neymarmodel
