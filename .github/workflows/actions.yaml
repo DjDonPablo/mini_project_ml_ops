@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker compose build api
-      - run: echo "${{LOGIN_SECRET}}" | docker login -u "${{LOGIN_USERNAME}}" --password-stdin
+      - run: echo "${{ secrets.LOGIN_SECRET }}" | docker login -u "${{ secrets.LOGIN_USERNAME }}" --password-stdin
       - run: docker tag neymarmodel djdonpablo/neymarmodel
       - run: docker push djdonpablo/neymarmodel
