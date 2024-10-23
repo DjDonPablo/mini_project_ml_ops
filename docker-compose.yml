@@ -1,6 +1,7 @@
 services:
   api:
     build: .
+    image: neymar
     ports:
       - "6969:6969"
     volumes:

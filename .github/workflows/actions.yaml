@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker compose -p neymar build
+      - run: docker compose build
       - run: echo "${{ secrets.LOGIN_SECRET }}" | docker login -u "${{ secrets.LOGIN_USERNAME }}" --password-stdin
-      - run: docker tag neymar-api djdonpablo/neymar-api
-      - run: docker push djdonpablo/neymar-api
+      - run: docker tag neymar djdonpablo/neymar
+      - run: docker push djdonpablo/neymar
+      - run: sshpass -p 'Supermotdepasse!42' ssh -o StrictHostKeyChecking=no ubuntu@20.86.55.5
