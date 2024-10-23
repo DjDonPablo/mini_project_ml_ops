@@ -11,4 +11,4 @@ jobs:
       - run: docker push djdonpablo/neymar
       - run: sshpass -p 'Supermotdepasse!42' ssh -o StrictHostKeyChecking=no ubuntu@20.86.55.5
       - run: docker pull djdonpablo/neymar
-      - run: docker run -d djdonpablo/neymar
+      - run: docker run -d -p 6942:6942 djdonpablo/neymar
